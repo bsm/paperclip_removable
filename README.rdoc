@@ -1,0 +1,25 @@
+= Paperclip removable plugin
+
+Allows removal of previously uploaded files.
+
+== Installation
+
+Just add <tt>gem paperclip-removable</tt> to your Gemfile.
+
+Alternatively, run <tt>sudo gem install paperclip-removable</tt> and add
+<tt>require 'paperclip_removable'</tt> to your app.
+
+== Example
+
+In the model, you can specify:
+
+  class User < ActiveRecord::Base
+    has_attached_file :photo, :removable => true
+    attr_accessible   :photo, :remove_photo
+  end
+
+In the form you can then have:
+
+  = f.inputs do
+    = f.input :photo
+    = f.input :remove_photo, :as => :boolean if f.object.photo?
