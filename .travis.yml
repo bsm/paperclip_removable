@@ -5,3 +5,4 @@ rvm:
 gemfile:
   - Gemfile
   - Gemfile.paperclip-2.3.x
+  - Gemfile.paperclip-2.4.x
