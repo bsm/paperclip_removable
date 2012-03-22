@@ -12,6 +12,10 @@ module Rails
     @root ||= Pathname.new(File.dirname(__FILE__))
   end
 
+  def self.logger
+    @logger ||= Logger.new(STDOUT)
+  end
+
   def self.env
     @env ||= ActiveSupport::StringInquirer.new(ENV["RAILS_ENV"])
   end
